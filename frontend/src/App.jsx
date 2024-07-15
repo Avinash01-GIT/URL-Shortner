@@ -18,7 +18,7 @@ const App = () => {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ url: text }), // Include the URL in the request body
+          body: JSON.stringify({ url: text }),
         }
       );
       if (!res.ok) {
@@ -67,7 +67,7 @@ const App = () => {
               {error && <p className="error">{error}</p>}
               {shortUrl && (
                 <div>
-                  <p>{{shortUrl}}</p>
+                  <p>{shortUrl}</p>
                   <button onClick={handleCopy}>Copy</button>
                 </div>
               )}
@@ -81,4 +81,4 @@ const App = () => {
 
 export default App;
 
-// https://url-shortner-azki.onrender.com
+
