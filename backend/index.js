@@ -18,6 +18,7 @@ app.use(express.json());
 app.use(cors());
 
 const urlsFilePath = path.join(__dirname, "urls.json");
+console.log(urlsFilePath)
 
 app.post("/shorten", async (req, res) => {
   const longUrl = req.body.url;
@@ -40,7 +41,7 @@ app.post("/shorten", async (req, res) => {
     
     res.json({
       success: true,
-      message: `${shortUrl}`,
+      message: `https://url-shortner-azki.onrender.com/${shortUrl}`,
     });
   } catch (err) {
     console.error("Error reading or writing file", err);
